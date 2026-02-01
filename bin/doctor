@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Ensure brew and nvm are available (doctor often runs in bash, so .zshrc isn't loaded)
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+[[ -s "$(brew --prefix nvm 2>/dev/null)/nvm.sh" ]] && source "$(brew --prefix nvm)/nvm.sh" 2>/dev/null || true
+
+echo "🩺 Dotfiles Doctor"
+echo "------------------"
+
+check() {
+  command -v "$1" >/dev/null 2>&1 && echo "✔ $1: $($2)" || echo "✘ $1 missing"
+}
+
+check brew "brew --version | head -n1"
+check git "git --version"
+check node "node -v"
+check nvm "nvm --version"
+check fzf "fzf --version | head -n1"
+check autojump "autojump --version"
+
+[[ -L "$HOME/.zshrc" ]] && echo "✔ .zshrc symlinked" || echo "⚠ .zshrc not symlinked"
+[[ -d "$HOME/.oh-my-zsh" ]] && echo "✔ Oh My Zsh installed" || echo "✘ Oh My Zsh missing"
+
+echo "------------------"
+echo "Doctor check complete"
