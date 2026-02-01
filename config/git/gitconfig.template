@@ -1,6 +1,6 @@
 [user]
-	name = yj
-	email = yangjing.yj56
+	# name = Your Name
+	# email = your@email.com
 
 [init]
 	defaultBranch = main
