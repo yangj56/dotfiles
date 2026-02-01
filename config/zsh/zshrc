@@ -22,3 +22,10 @@ source "$DOTFILES/config/zsh/aliases.zsh"
 source "$DOTFILES/config/zsh/plugins.zsh"
 
 [[ -f "$HOME/.zshrc.private" ]] && source "$HOME/.zshrc.private"
+
+# opencode
+export PATH=/Users/admin/.opencode/bin:$PATH
+
+# .NET 8 (keg-only; path set so tools can find dotnet)
+export DOTNET_ROOT="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/dotnet@8/libexec"
+export PATH="$DOTNET_ROOT:$PATH"
