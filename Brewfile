@@ -11,6 +11,7 @@ brew "azure-cli"
 brew "terraform"
 brew "fluxcd/tap/flux"
 brew "postgresql"
+brew "helm"
 
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"

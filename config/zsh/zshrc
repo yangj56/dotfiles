@@ -29,3 +29,5 @@ export PATH=/Users/admin/.opencode/bin:$PATH
 # .NET 8 (keg-only; path set so tools can find dotnet)
 export DOTNET_ROOT="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/dotnet@8/libexec"
 export PATH="$DOTNET_ROOT:$PATH"
+
+. "$HOME/.local/bin/env"
