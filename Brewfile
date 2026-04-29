@@ -1,3 +1,5 @@
+tap "hashicorp/tap"
+
 brew "git"
 brew "fzf"
 brew "ripgrep"
@@ -8,13 +10,15 @@ brew "nvm"
 brew "autojump"
 brew "dotnet@8"
 brew "azure-cli"
-brew "terraform"
+brew "hashicorp/tap/terraform"
 brew "fluxcd/tap/flux"
 brew "postgresql"
 brew "helm"
 
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+
+brew "uv"
 
 cask "cursor"
 cask "orbstack"
