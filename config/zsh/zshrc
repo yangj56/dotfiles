@@ -26,8 +26,8 @@ source "$DOTFILES/config/zsh/plugins.zsh"
 # opencode
 export PATH=/Users/admin/.opencode/bin:$PATH
 
-# .NET 8 (keg-only; path set so tools can find dotnet)
-export DOTNET_ROOT="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/dotnet@8/libexec"
+# .NET 10
+export DOTNET_ROOT="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/dotnet/libexec"
 export PATH="$DOTNET_ROOT:$PATH"
 
 . "$HOME/.local/bin/env"
