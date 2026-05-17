@@ -19,12 +19,19 @@ check() {
 
 check brew "brew --version | head -n1"
 check git "git --version"
+
+if git config --global user.name >/dev/null 2>&1 && git config --global user.email >/dev/null 2>&1; then
+  echo "✔ git identity: $(git config --global user.name) <$(git config --global user.email)>"
+else
+  echo "⚠ git user.name / user.email not set (edit config/git/gitconfig)"
+fi
 check node "node -v"
 check nvm "nvm --version"
 check fzf "fzf --version | head -n1"
 check autojump "autojump --version"
 
 [[ -L "$HOME/.zshrc" ]] && echo "✔ .zshrc symlinked" || echo "⚠ .zshrc not symlinked"
+[[ -L "$HOME/.gitconfig" ]] && echo "✔ .gitconfig symlinked" || echo "⚠ .gitconfig not symlinked"
 [[ -d "$HOME/.oh-my-zsh" ]] && echo "✔ Oh My Zsh installed" || echo "✘ Oh My Zsh missing"
 
 echo "------------------"
