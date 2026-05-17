@@ -45,14 +45,15 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-# NVM + Node LTS
+# NVM + Node 24
 export NVM_DIR="$HOME/.nvm"
 mkdir -p "$NVM_DIR"
 if [[ -s "$(brew --prefix nvm)/nvm.sh" ]]; then
   # shellcheck source=/dev/null
   source "$(brew --prefix nvm)/nvm.sh"
-  nvm install --lts
-  nvm use --lts
+  nvm install 24
+  nvm alias default 24
+  nvm use default
 else
   echo "Warning: nvm not found; skip Node install" >&2
 fi
