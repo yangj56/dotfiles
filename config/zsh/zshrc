@@ -30,3 +30,9 @@ export PATH="$DOTNET_ROOT:$PATH"
 
 # uv / pipx user tools (optional)
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
+export PATH="$HOME/bin:$PATH"
+
+# bun (optional)
+export BUN_INSTALL="$HOME/.bun"
+[[ -d "$BUN_INSTALL/bin" ]] && export PATH="$BUN_INSTALL/bin:$PATH"
+[[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"

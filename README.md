@@ -1,14 +1,14 @@
 # Dotfiles
 
-Clean Mac dev setup: **Oh My Zsh**, **nvm**, **Cursor**, **OrbStack**, and CLI tools. No iTerm2 — use Cursor’s terminal (or any terminal).
+Clean Mac dev setup: **Oh My Zsh**, **nvm**, **Cursor**, **Docker Desktop**, and CLI tools. No iTerm2 — use Cursor’s terminal (or any terminal).
 
 **What you get**
 
 - **Oh My Zsh** + `robbyrussell` theme
 - Git autocomplete + autosuggestions
-- **nvm** + Node LTS
+- **nvm** + Node 24
 - **Cursor** (main IDE + terminal)
-- **OrbStack**
+- **Docker Desktop**
 - Flycut, autojump, fzf, bat, eza, ripgrep
 - One **dotfiles repo** as the single source of truth
 - A **`doctor`** command to verify everything
@@ -71,9 +71,9 @@ doctor
 ```
 
 - **`bootstrap.sh`** — Installs Homebrew (if needed), sets up PATH, and generates `config/git/gitconfig` from the template if it doesn’t exist.
-- **`install.sh`** — Runs `brew bundle`, installs Oh My Zsh, symlinks `.zshrc`, `.gitconfig`, `.gitignore_global`, and installs Node LTS via nvm.
+- **`install.sh`** — Runs `brew bundle`, installs Oh My Zsh, symlinks `.zshrc`, `.gitconfig`, `.gitignore_global`, and installs Node 24 via nvm.
 - **`exec zsh`** — Reloads your shell so the new config is active.
-- **`doctor`** — Checks that brew, git, node, nvm, fzf, autojump, Oh My Zsh, and symlinks are present.
+- **`doctor`** — Checks that brew, git, node, nvm, docker, fzf, autojump, Oh My Zsh, and symlinks are present.
 
 ---
 
@@ -98,9 +98,10 @@ Uncomment and set:
 
 ---
 
-## 5. Optional: Flycut at login
+## 5. Optional: after install
 
-- **System Settings → Login Items** → enable **Flycut** so the clipboard manager starts on login.
+- **Docker Desktop** — open the app once so the `docker` CLI works (`doctor` checks this).
+- **Flycut** — **System Settings → Login Items** → enable so the clipboard manager starts on login.
 
 ---
 

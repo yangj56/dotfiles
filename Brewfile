@@ -1,6 +1,9 @@
 tap "hashicorp/tap"
+tap "fluxcd/tap"
 
 brew "git"
+brew "gh"
+brew "jq"
 brew "fzf"
 brew "ripgrep"
 brew "bat"
@@ -12,6 +15,7 @@ brew "dotnet"
 brew "azure-cli"
 brew "hashicorp/tap/terraform"
 brew "fluxcd/tap/flux"
+brew "kubectl"
 brew "postgresql"
 brew "helm"
 
